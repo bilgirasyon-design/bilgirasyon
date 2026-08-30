@@ -1,0 +1,28 @@
+[
+  {
+    "name": "teknoloji",
+    "slug": "teknoloji",
+    "articles": [
+      {
+        "title": "Makine Öğrenmesi (ML) Nedir?",
+        "slug": "makine-ogrenmesi-nedir",
+        "description": "Makine öğrenmesi nedir ve nasıl çalışır?",
+        "topic": "makine-ogrenmesi",
+        "type": "article",
+        "route": "/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/",
+        "canonicalUrl": "https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/",
+        "image": ""
+      },
+      {
+        "title": "Yapay Zeka Nedir?",
+        "slug": "yapay-zeka-nedir",
+        "description": "Yapay zeka nedir ve nasıl çalışır",
+        "topic": "yapay-zeka",
+        "type": "pillar",
+        "route": "/teknoloji/yapay-zeka/yapay-zeka-nedir/",
+        "canonicalUrl": "https://www.bilgirasyon.com/teknoloji/yapay-zeka/yapay-zeka-nedir/",
+        "image": ""
+      }
+    ]
+  }
+]

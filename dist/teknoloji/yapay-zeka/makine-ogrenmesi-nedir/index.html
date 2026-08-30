@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="tr-TR">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Makine Öğrenmesi (ML) Nedir? | Bilgirasyon</title>
+
+  <meta
+    name="description"
+    content="Makine öğrenmesi nedir ve nasıl çalışır?"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/"
+  >
+
+  <meta name="author" content="Bilgirasyon">
+<meta name="article:published_time" content="2026-08-30">
+<meta name="article:modified_time" content="2026-08-30">
+<meta name="article:section" content="teknoloji">
+
+  <meta property="og:title" content="Makine Öğrenmesi (ML) Nedir?">
+<meta property="og:description" content="Makine öğrenmesi nedir ve nasıl çalışır?">
+<meta property="og:url" content="https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bilgirasyon">
+
+  <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Makine Öğrenmesi (ML) Nedir?">
+<meta name="twitter:description" content="Makine öğrenmesi nedir ve nasıl çalışır?">
+<meta name="twitter:url" content="https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Makine Öğrenmesi (ML) Nedir?",
+  "description": "Makine öğrenmesi nedir ve nasıl çalışır?",
+  "author": {
+    "@type": "Person",
+    "name": "Bilgirasyon"
+  },
+  "datePublished": "2026-08-30",
+  "dateModified": "2026-08-30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/"
+  }
+}
+  </script>
+</head>
+
+<body>
+
+  <main>
+
+    <article>
+
+      <nav class="article-toc" aria-label="İçindekiler"><h2>İçindekiler</h2><ul><li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nedir">Makine öğrenmesi nedir?</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nasil-calisir">Makine Öğrenmesi Nasıl Çalışır?</a></li>
+<li class="toc-item toc-level-3"><a href="#1-veri-toplama">1. Veri Toplama</a></li>
+<li class="toc-item toc-level-3"><a href="#2-veri-isleme-preprocessing">2. Veri İşleme (Preprocessing)</a></li>
+<li class="toc-item toc-level-3"><a href="#3-ozellik-cikarma-feature-engineering">3. Özellik Çıkarma (Feature Engineering)</a></li>
+<li class="toc-item toc-level-3"><a href="#4-model-secimi">4. Model Seçimi</a></li>
+<li class="toc-item toc-level-3"><a href="#5-egitim-training">5. Eğitim (Training)</a></li>
+<li class="toc-item toc-level-3"><a href="#6-degerlendirme-evaluation">6. Değerlendirme (Evaluation)</a></li>
+<li class="toc-item toc-level-3"><a href="#7-tahmin-prediction">7. Tahmin (Prediction)</a></li>
+<li class="toc-item toc-level-3"><a href="#surecin-ozeti">Sürecin Özeti</a></li>
+<li class="toc-item toc-level-2"><a href="#denetimli-ogrenme-supervised-learning">Denetimli Öğrenme (Supervised Learning)</a></li>
+<li class="toc-item toc-level-3"><a href="#nerelerde-kullanilir">Nerelerde kullanılır?</a></li>
+<li class="toc-item toc-level-3"><a href="#problem-turleri">Problem Türleri</a></li>
+<li class="toc-item toc-level-3"><a href="#avantaj-dezavantaj">Avantaj &amp; Dezavantaj</a></li>
+<li class="toc-item toc-level-2"><a href="#denetimsiz-ogrenme-unsupervised-learning">Denetimsiz Öğrenme (Unsupervised Learning)</a></li>
+<li class="toc-item toc-level-3"><a href="#en-yaygin-kullanim">En yaygın kullanım:</a></li>
+<li class="toc-item toc-level-3"><a href="#avantaj-dezavantaj-2">Avantaj &amp; Dezavantaj</a></li>
+<li class="toc-item toc-level-2"><a href="#reinforcement-learning-pekistirmeli-ogrenme">Reinforcement Learning (Pekiştirmeli Öğrenme)</a></li>
+<li class="toc-item toc-level-3"><a href="#kullanim-alanlari">Kullanım Alanları</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-algoritma-ornekleri">Makine Öğrenmesi Algoritma Örnekleri</a></li>
+<li class="toc-item toc-level-3"><a href="#yaygin-algoritmalar">Yaygın algoritmalar:</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-ve-derin-ogrenme-iliskisi">Makine Öğrenmesi ve Derin Öğrenme İlişkisi</a></li>
+<li class="toc-item toc-level-3"><a href="#farklar">Farklar</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nerelerde-kullanilir">Makine Öğrenmesi Nerelerde Kullanılır?</a></li>
+<li class="toc-item toc-level-3"><a href="#kullanim-alanlari-2">Kullanım alanları</a></li>
+<li class="toc-item toc-level-2"><a href="#mini-case-study-netflix-oneri-sistemi">Mini Case Study: Netflix Öneri Sistemi</a></li>
+<li class="toc-item toc-level-3"><a href="#kullanilan-veri-turleri">Kullanılan veri türleri</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-vs-klasik-programlama">Makine Öğrenmesi vs Klasik Programlama</a></li>
+<li class="toc-item toc-level-3"><a href="#karsilastirma">Karşılaştırma</a></li>
+<li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-ogrenmek-icin-gerekenler">Makine Öğrenmesi Öğrenmek İçin Gerekenler</a></li>
+<li class="toc-item toc-level-3"><a href="#temel-gereksinimler">Temel Gereksinimler</a></li>
+<li class="toc-item toc-level-2"><a href="#sik-sorulan-sorular-faq">Sık Sorulan Sorular (FAQ)</a></li>
+<li class="toc-item toc-level-3"><a href="#makine-ogrenmesi-zor-mu">Makine öğrenmesi zor mu?</a></li>
+<li class="toc-item toc-level-3"><a href="#python-bilmeden-ogrenilir-mi">Python bilmeden öğrenilir mi?</a></li>
+<li class="toc-item toc-level-3"><a href="#makine-ogrenmesi-nereden-ogrenilir">Makine öğrenmesi nereden öğrenilir?</a></li>
+<li class="toc-item toc-level-2"><a href="#sonuc">Sonuç</a></li></ul></nav>
+
+      <h1>Makine Öğrenmesi (ML) Nedir?</h1>
+<p>Makine öğrenmesi (Machine Learning – ML), bilgisayarların açıkça programlanmadan veri üzerinden öğrenmesini sağlayan bir yapay zeka alt dalıdır.</p>
+<h2>Makine öğrenmesi nedir?</h2>
+<p>Makine öğrenmesi, veriyi analiz ederek örüntüleri öğrenen ve bu bilgiyi kullanarak tahmin yapan sistemlerdir. Günümüzde spam filtreleri, öneri algoritmaları ve finansal analiz sistemleri gibi birçok alanda aktif olarak kullanılır.</p>
+<p>Klasik yazılımlarda kurallar insan tarafından tek tek yazılırken, makine öğrenmesinde sistem bu kuralları veriden kendisi çıkarır.</p>
+<p>Bu noktada konuyu daha geniş çerçevede anlamak için <strong>Yapay Zeka Nedir</strong> içeriğine bakmak kritik çünkü makine öğrenmesi, yapay zekanın en aktif kullanılan kısmıdır.</p>
+<p>En basit tanımıyla:</p>
+<p>Makine öğrenmesi = <strong>veri + algoritma + öğrenme süreci</strong></p>
+<p>Bir model, geçmiş verileri analiz eder, örüntüleri yakalar ve bu bilgiyi kullanarak yeni veriler hakkında tahmin üretir.</p>
+<table>
+<thead>
+<tr>
+<th>Gerçek Hayattan Örnekler</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E-posta spam filtreleri</td>
+</tr>
+<tr>
+<td>Netflix ve YouTube öneri sistemleri</td>
+</tr>
+<tr>
+<td>Bankacılıkta dolandırıcılık tespiti</td>
+</tr>
+<tr>
+<td>Google arama sonuçları sıralaması</td>
+</tr>
+</tbody></table>
+<p>👉 Bugün kullandığın neredeyse tüm akıllı sistemlerin arkasında makine öğrenmesi vardır.</p>
+<hr>
+<h2>Makine Öğrenmesi Nasıl Çalışır?</h2>
+<p>Makine öğrenmesi sihir değil, sistematik bir süreçtir. Bu süreci anlamadan konuyu tam kavrayamazsın.</p>
+<h3>1. Veri Toplama</h3>
+<p>Modelin öğrenmesi için veri gerekir. Veri ne kadar doğru ve büyükse model o kadar iyi sonuç verir.</p>
+<p>👉 Kritik nokta: Kötü veri = kötü model</p>
+<h3>2. Veri İşleme (Preprocessing)</h3>
+<p>Ham veri genellikle kirli ve düzensizdir:</p>
+<ul>
+<li>Eksik veriler temizlenir</li>
+<li>Gürültü azaltılır</li>
+<li>Format düzenlenir</li>
+</ul>
+<p>Bu aşama doğrudan <strong>Veri Bilimi</strong> ile bağlantılıdır ve çoğu zaman projenin en kritik kısmıdır.</p>
+<h3>3. Özellik Çıkarma (Feature Engineering)</h3>
+<p>Veri içindeki önemli sinyaller seçilir.</p>
+<p>👉 Yanlış feature seçimi → model çöp olur</p>
+<h3>4. Model Seçimi</h3>
+<p>Probleme uygun <strong>Algoritmalar</strong> seçilir:</p>
+<ul>
+<li>Sınıflandırma</li>
+<li>Regresyon</li>
+<li>Kümeleme</li>
+</ul>
+<h3>5. Eğitim (Training)</h3>
+<p>Model veriyi analiz eder ve hatalarını minimize ederek öğrenir.</p>
+<h3>6. Değerlendirme (Evaluation)</h3>
+<p>Model daha önce görmediği veri ile test edilir.</p>
+<p>👉 Amaç: Genelleme yapabiliyor mu?</p>
+<h3>7. Tahmin (Prediction)</h3>
+<p>Artık model gerçek dünyada kullanılabilir.</p>
+<hr>
+<h3>Sürecin Özeti</h3>
+<table>
+<thead>
+<tr>
+<th>Aşama</th>
+<th>Ne Yapılır</th>
+<th>Kritik Nokta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Veri Toplama</td>
+<td>Veri elde edilir</td>
+<td>Veri kalitesi</td>
+</tr>
+<tr>
+<td>Veri Temizleme</td>
+<td>Gürültü giderilir</td>
+<td>Veri doğruluğu</td>
+</tr>
+<tr>
+<td>Feature Engineering</td>
+<td>Önemli değişkenler seçilir</td>
+<td>Model performansı</td>
+</tr>
+<tr>
+<td>Model Eğitimi</td>
+<td>Model öğrenir</td>
+<td>Overfitting riski</td>
+</tr>
+<tr>
+<td>Test</td>
+<td>Performans ölçülür</td>
+<td>Gerçek dünya başarısı</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Denetimli Öğrenme (Supervised Learning)</h2>
+<p>Denetimli öğrenme en yaygın kullanılan yöntemdir.</p>
+<p>Mantık basit:<br>Model hem girdiyi hem doğru cevabı görür.</p>
+<h3>Nerelerde kullanılır?</h3>
+<ul>
+<li>Spam filtreleme</li>
+<li>Kredi skoru hesaplama</li>
+<li>Hastalık teşhisi</li>
+</ul>
+<h3>Problem Türleri</h3>
+<table>
+<thead>
+<tr>
+<th>Tür</th>
+<th>Açıklama</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Classification</td>
+<td>Kategorik çıktı</td>
+<td>Spam / değil</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Sayısal çıktı</td>
+<td>Ev fiyatı</td>
+</tr>
+</tbody></table>
+<h3>Avantaj &amp; Dezavantaj</h3>
+<table>
+<thead>
+<tr>
+<th>Avantaj</th>
+<th>Dezavantaj</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Yüksek doğruluk</td>
+<td>Etiketli veri gerekir</td>
+</tr>
+<tr>
+<td>Tahmin gücü yüksek</td>
+<td>Veri hazırlama maliyetli</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Denetimsiz Öğrenme (Unsupervised Learning)</h2>
+<p>Burada model yalnızca veriyi görür, doğru cevap verilmez.</p>
+<p>Amaç:<br>→ Verinin içindeki gizli yapıyı keşfetmek</p>
+<h3>En yaygın kullanım:</h3>
+<table>
+<thead>
+<tr>
+<th>Teknik</th>
+<th>Açıklama</th>
+<th>Kullanım</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clustering</td>
+<td>Benzer verileri gruplar</td>
+<td>Müşteri segmentasyonu</td>
+</tr>
+<tr>
+<td>Dimensionality Reduction</td>
+<td>Veri boyutunu azaltır</td>
+<td>Görselleştirme</td>
+</tr>
+</tbody></table>
+<h3>Avantaj &amp; Dezavantaj</h3>
+<table>
+<thead>
+<tr>
+<th>Avantaj</th>
+<th>Dezavantaj</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Etiket gerekmez</td>
+<td>Yorumlamak zor</td>
+</tr>
+<tr>
+<td>Veri keşfi sağlar</td>
+<td>Sonuç belirsiz olabilir</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Reinforcement Learning (Pekiştirmeli Öğrenme)</h2>
+<p>Bu model tamamen farklı çalışır.</p>
+<p>Sistem:</p>
+<ul>
+<li>Aksiyon alır</li>
+<li>Sonuç görür</li>
+<li>Ödül veya ceza alır</li>
+</ul>
+<p>Amaç:<br>→ Maksimum ödül</p>
+<h3>Kullanım Alanları</h3>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Oyun</td>
+<td>Satranç AI</td>
+</tr>
+<tr>
+<td>Otomotiv</td>
+<td>Otonom araç</td>
+</tr>
+<tr>
+<td>Robotik</td>
+<td>Endüstriyel robot</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Makine Öğrenmesi Algoritma Örnekleri</h2>
+<p>Makine öğrenmesi teorik değil, algoritmalar üzerinden çalışır.</p>
+<h3>Yaygın algoritmalar:</h3>
+<table>
+<thead>
+<tr>
+<th>Algoritma</th>
+<th>Ne Yapar</th>
+<th>Kullanım</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Decision Tree</td>
+<td>Karar ağacı kurar</td>
+<td>Sınıflandırma</td>
+</tr>
+<tr>
+<td>KNN</td>
+<td>En yakın komşuya bakar</td>
+<td>Basit tahmin</td>
+</tr>
+<tr>
+<td>Linear Regression</td>
+<td>Sayısal tahmin</td>
+<td>Fiyat analizi</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Çoklu ağaç sistemi</td>
+<td>Yüksek doğruluk</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Makine Öğrenmesi ve Derin Öğrenme İlişkisi</h2>
+<p>Makine öğrenmesi geniş bir alan. Bunun daha gelişmiş hali:</p>
+<p>→ <strong>Derin Öğrenme</strong></p>
+<h3>Farklar</h3>
+<table>
+<thead>
+<tr>
+<th>Özellik</th>
+<th>Makine Öğrenmesi</th>
+<th>Derin Öğrenme</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Veri ihtiyacı</td>
+<td>Orta</td>
+<td>Çok yüksek</td>
+</tr>
+<tr>
+<td>Model yapısı</td>
+<td>Basit</td>
+<td>Sinir ağları</td>
+</tr>
+<tr>
+<td>Feature seçimi</td>
+<td>Manuel</td>
+<td>Otomatik</td>
+</tr>
+<tr>
+<td>Performans</td>
+<td>Orta</td>
+<td>Çok yüksek</td>
+</tr>
+</tbody></table>
+<p>👉 Derin öğrenme özellikle görüntü ve ses işleme alanlarında devrim yaratmıştır.</p>
+<hr>
+<h2>Makine Öğrenmesi Nerelerde Kullanılır?</h2>
+<p>Makine öğrenmesi artık hayatın her yerinde.</p>
+<h3>Kullanım alanları</h3>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>Kullanım</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E-ticaret</td>
+<td>Ürün öneri sistemi</td>
+</tr>
+<tr>
+<td>Finans</td>
+<td>Fraud detection</td>
+</tr>
+<tr>
+<td>Sağlık</td>
+<td>Hastalık teşhisi</td>
+</tr>
+<tr>
+<td>Sosyal medya</td>
+<td>İçerik önerileri</td>
+</tr>
+<tr>
+<td>Oyun</td>
+<td>NPC davranışları</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Mini Case Study: Netflix Öneri Sistemi</h2>
+<p>Netflix, makine öğrenmesini en iyi kullanan sistemlerden biridir.</p>
+<p>Nasıl çalışır?</p>
+<ul>
+<li>İzlediğin içerikler analiz edilir</li>
+<li>Benzer kullanıcılar bulunur</li>
+<li>Sana özel öneriler sunulur</li>
+</ul>
+<h3>Kullanılan veri türleri</h3>
+<table>
+<thead>
+<tr>
+<th>Veri</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>İzleme süresi</td>
+<td>İlgi düzeyi</td>
+</tr>
+<tr>
+<td>Tür tercihleri</td>
+<td>Kullanıcı profili</td>
+</tr>
+<tr>
+<td>Etkileşim</td>
+<td>Davranış analizi</td>
+</tr>
+</tbody></table>
+<p>👉 Bu sistem tamamen makine öğrenmesi + veri analizi üzerine kuruludur.</p>
+<hr>
+<h2>Makine Öğrenmesi vs Klasik Programlama</h2>
+<h3>Karşılaştırma</h3>
+<table>
+<thead>
+<tr>
+<th>Sistem</th>
+<th>Mantık</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Klasik Programlama</td>
+<td>Veri + Kurallar → Sonuç</td>
+</tr>
+<tr>
+<td>Makine Öğrenmesi</td>
+<td>Veri + Sonuç → Kurallar</td>
+</tr>
+</tbody></table>
+<p>👉 Artık kuralları insan yazmaz → sistem öğrenir</p>
+<hr>
+<h2>Makine Öğrenmesi Öğrenmek İçin Gerekenler</h2>
+<p>Bu alana girmek isteyenler için net yol:</p>
+<h3>Temel Gereksinimler</h3>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>İçerik</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Matematik</td>
+<td>Lineer cebir, istatistik</td>
+</tr>
+<tr>
+<td>Programlama</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>Kütüphaneler</td>
+<td>NumPy, Pandas</td>
+</tr>
+<tr>
+<td>Veri Analizi</td>
+<td>Temizleme, görselleştirme</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Sık Sorulan Sorular (FAQ)</h2>
+<h3>Makine öğrenmesi zor mu?</h3>
+<p>Başlangıçta zor görünebilir ancak temel kavramlar öğrenildiğinde ilerlemek kolaylaşır.</p>
+<h3>Python bilmeden öğrenilir mi?</h3>
+<p>Hayır. Pratik yapmak için Python bilmek şarttır.</p>
+<h3>Makine öğrenmesi nereden öğrenilir?</h3>
+<p>Online kurslar, projeler ve veri setleri ile öğrenilebilir.</p>
+<hr>
+<h2>Sonuç</h2>
+<p>Makine öğrenmesi, modern teknolojinin temelidir.</p>
+<p>Sistem:</p>
+<ul>
+<li>Veriyi analiz eder</li>
+<li>Öğrenir</li>
+<li>Tahmin üretir</li>
+</ul>
+<p>Bu sayede:</p>
+<ul>
+<li>Otomasyon artar</li>
+<li>İnsan müdahalesi azalır</li>
+<li>Karar sistemleri güçlenir</li>
+</ul>
+<p>👉 Eğer konuyu derinlemesine anlamak istiyorsan şu içeriklere geç:</p>
+<ul>
+<li>Yapay Zeka Nedir</li>
+<li>Algoritmalar</li>
+<li>Derin Öğrenme</li>
+<li>Veri Bilimi</li>
+</ul>
+<p>Bu içerikler birlikte okunduğunda konu tam oturur.</p>
+
+
+    </article>
+
+    <section class="related-posts" aria-labelledby="related-posts-title"><h2 id="related-posts-title">İlgili Yazılar</h2><ul><li class="related-post"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/"><h3>Yapay Zeka Nedir?</h3><p>Yapay zeka nedir ve nasıl çalışır</p></a></li></ul></section>
+
+  </main>
+
+  <nav class="internal-links" aria-label="İlgili bağlantılar"><ul><li class="internal-link"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/">Yapay Zeka Nedir?</a></li></ul></nav>
+
+</body>
+</html>
