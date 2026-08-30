@@ -1,0 +1,21 @@
+{
+  "site": {
+    "name": "Bilgirasyon",
+    "domain": "https://www.bilgirasyon.com",
+    "language": "tr-TR",
+    "locale": "tr_TR",
+    "description": "Teknolojiyi anlayın, geleceği keşfedin.",
+    "author": "Bilgirasyon"
+  },
+  "seo": {
+    "defaultTitle": "Bilgirasyon | Teknolojiyi Anlayın, Geleceği Keşfedin",
+    "defaultDescription": "Yapay zeka, yazılım, donanım, oyun ve teknoloji dünyasından anlaşılır ve güvenilir içerikler.",
+    "defaultRobots": "index, follow"
+  },
+  "social": {
+    "twitter": "",
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  }
+}

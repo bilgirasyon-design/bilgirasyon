@@ -1,0 +1,16 @@
+{
+  "name": "bilgirasyon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilgirasyon - SEO odaklı teknoloji içerik platformu",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.js",
+    "validate": "node build/validate.js",
+    "dev": "node build/build.js --watch"
+  },
+  "dependencies": {
+    "marked": "^16.2.1",
+    "yaml": "^2.9.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "name": "Teknoloji",
+      "slug": "teknoloji",
+      "path": "/teknoloji.html",
+      "active": true,
+      "children": [
+        {
+          "name": "Yapay Zeka",
+          "slug": "yapay-zeka",
+          "path": "/teknoloji/yapay-zeka/",
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Yazılım",
+      "slug": "yazilim",
+      "path": "/yazilim.html",
+      "active": false,
+      "children": []
+    },
+    {
+      "name": "Donanım",
+      "slug": "donanim",
+      "path": "/donanim.html",
+      "active": false,
+      "children": []
+    },
+    {
+      "name": "Oyun",
+      "slug": "oyun",
+      "path": "/oyun.html",
+      "active": false,
+      "children": []
+    },
+    {
+      "name": "İncelemeler",
+      "slug": "incelemeler",
+      "path": "/incelemeler.html",
+      "active": false,
+      "children": []
+    }
+  ]
+}
