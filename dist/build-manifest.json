@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-31T18:59:46.620Z",
+  "site": "https://www.bilgirasyon.com",
+  "contentCount": 2,
+  "generatedHtmlCount": 2,
+  "sitemapUrlCount": 2,
+  "sitemapFiles": [
+    "sitemap-1.xml"
+  ],
+  "graphNodeCount": 2,
+  "orphanContentCount": 0,
+  "brokenInternalLinkCount": 0,
+  "orphanContent": [],
+  "routes": [
+    {
+      "route": "/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/",
+      "canonicalUrl": "https://www.bilgirasyon.com/teknoloji/yapay-zeka/makine-ogrenmesi-nedir/",
+      "sourcePath": "content\\teknoloji\\yapay-zeka\\makine-ogrenmesi-nedir.md",
+      "title": "Makine Öğrenmesi (ML) Nedir?",
+      "dateModified": "2026-08-30"
+    },
+    {
+      "route": "/teknoloji/yapay-zeka/yapay-zeka-nedir/",
+      "canonicalUrl": "https://www.bilgirasyon.com/teknoloji/yapay-zeka/yapay-zeka-nedir/",
+      "sourcePath": "content\\teknoloji\\yapay-zeka\\yapay-zeka-nedir.md",
+      "title": "Yapay Zeka Nedir?",
+      "dateModified": "2026-08-30"
+    }
+  ],
+  "hash": "1e4c0fab95deb0c4a25b0740d551041483c05f92ba4fccd38e193c7614c3f1d0"
+}
