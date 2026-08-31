@@ -2,10 +2,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { auditProductionOutput } from "./production-audit-engine.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, "..");
 const DIST_DIR = path.join(ROOT_DIR, "dist");
+const SITE_CONFIG_FILE = path.join(ROOT_DIR, "data", "site.json");
 
 async function readJson(filePath) {
   return JSON.parse(
@@ -58,6 +61,15 @@ async function validate() {
   }
 
   const manifest = await readJson(manifestPath);
+  const siteConfig = await readJson(SITE_CONFIG_FILE);
+  const domain = siteConfig.site?.domain;
+
+  if (!domain) {
+    throw new Error(
+      "Production Validation: site.json içerisinde site.domain bulunamadı."
+    );
+  }
+
   const htmlFiles = await getHtmlFiles(DIST_DIR);
   const articleHtmlFiles = htmlFiles.filter(
     (file) => !file.includes(`${path.sep}data${path.sep}`)
@@ -72,6 +84,18 @@ async function validate() {
   if (manifest.brokenInternalLinkCount !== 0) {
     throw new Error(
       `Production Validation: broken internal link sayısı sıfır olmalıdır. Bulunan: ${manifest.brokenInternalLinkCount}`
+    );
+  }
+
+  if (!Number.isInteger(manifest.contentCount) || manifest.contentCount < 1) {
+    throw new Error(
+      "Production Validation: manifest contentCount geçersiz."
+    );
+  }
+
+  if (manifest.contentCount !== manifest.generatedHtmlCount) {
+    throw new Error(
+      `Production Validation: içerik ve HTML sayısı eşleşmiyor. İçerik: ${manifest.contentCount}, HTML: ${manifest.generatedHtmlCount}`
     );
   }
 
@@ -107,6 +131,22 @@ async function validate() {
     }
   }
 
+  const articles = manifest.routes.map((record) => ({
+    ...record,
+    distPath: path.join(
+      DIST_DIR,
+      record.route.replace(/^\/+|\/+$/g, ""),
+      "index.html"
+    )
+  }));
+
+  const audit = await auditProductionOutput({
+    distDir: DIST_DIR,
+    articles,
+    domain,
+    sitemapFiles
+  });
+
   let breadcrumbCount = 0;
 
   for (const file of articleHtmlFiles) {
@@ -131,6 +171,9 @@ async function validate() {
   console.log(`✓ Sitemap: ${manifest.sitemapUrlCount} URL`);
   console.log(`✓ Robots: hazır`);
   console.log(`✓ Breadcrumb: ${breadcrumbCount} HTML`);
+  console.log(`✓ Canonical: ${audit.canonicalCount}`);
+  console.log(`✓ JSON-LD: ${audit.jsonLdCount}`);
+  console.log(`✓ Internal link integrity: ${audit.internalLinkCount} link`);
   console.log(`✓ Broken internal links: 0`);
   console.log(`✓ Orphan content: ${manifest.orphanContentCount}`);
 }
