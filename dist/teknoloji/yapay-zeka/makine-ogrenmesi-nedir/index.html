@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="tr-TR">
+
 <head>
   <meta charset="utf-8">
 
@@ -28,6 +29,31 @@
   <link
     rel="stylesheet"
     href="/css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/layout.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/header.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/article.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/responsive.css"
   >
 
   <meta name="author" content="Bilgirasyon">
@@ -94,12 +120,88 @@
 
 <body>
 
-  <main>
+  <header class="site-header">
 
-    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Bilgirasyon</a></li><li>teknoloji</li><li aria-current="page">Makine Öğrenmesi (ML) Nedir?</li></ol></nav>
+    <div class="site-header__inner">
+
+      <a
+        class="site-brand"
+        href="/"
+        aria-label="Bilgirasyon Ana Sayfa"
+      >
+        <span class="site-brand__text">
+          Bilgirasyon
+        </span>
+      </a>
+
+      <nav
+        class="site-navigation"
+        aria-label="Ana navigasyon"
+      >
+
+        <ul class="site-navigation__list">
+
+          <li class="site-navigation__item">
+            <a
+              class="site-navigation__link"
+              href="/"
+            >
+              Ana Sayfa
+            </a>
+          </li>
+
+          <li class="site-navigation__item">
+            <a
+              class="site-navigation__link"
+              href="/teknoloji/"
+            >
+              Teknoloji
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="site-header__actions">
+
+        <button
+          class="site-header__menu-button"
+          type="button"
+          aria-label="Menüyü aç"
+          aria-expanded="false"
+        >
+          <span class="site-header__menu-icon"></span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="site-main">
+
+    <div class="site-container">
+
+      <div class="content-grid">
+
+        <div class="content-grid__main">
+
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Bilgirasyon</a></li><li>teknoloji</li><li aria-current="page">Makine Öğrenmesi (ML) Nedir?</li></ol></nav>
     <article>
 
-      <nav class="article-toc" aria-label="İçindekiler"><h2>İçindekiler</h2><ul><li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nedir">Makine öğrenmesi nedir?</a></li>
+            <div class="article">
+
+              <header class="article-header">
+
+                <h1 class="article-title">
+                  Makine Öğrenmesi (ML) Nedir? | Bilgirasyon
+                </h1>
+
+              </header>
+
+              <nav class="article-toc" aria-label="İçindekiler"><h2>İçindekiler</h2><ul><li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nedir">Makine öğrenmesi nedir?</a></li>
 <li class="toc-item toc-level-2"><a href="#makine-ogrenmesi-nasil-calisir">Makine Öğrenmesi Nasıl Çalışır?</a></li>
 <li class="toc-item toc-level-3"><a href="#1-veri-toplama">1. Veri Toplama</a></li>
 <li class="toc-item toc-level-3"><a href="#2-veri-isleme-preprocessing">2. Veri İşleme (Preprocessing)</a></li>
@@ -136,7 +238,8 @@
 <li class="toc-item toc-level-3"><a href="#makine-ogrenmesi-nereden-ogrenilir">Makine öğrenmesi nereden öğrenilir?</a></li>
 <li class="toc-item toc-level-2"><a href="#sonuc">Sonuç</a></li></ul></nav>
 
-      <h1>Makine Öğrenmesi (ML) Nedir?</h1>
+              <div class="article-content">
+                <h1>Makine Öğrenmesi (ML) Nedir?</h1>
 <p>Makine öğrenmesi (Machine Learning – ML), bilgisayarların açıkça programlanmadan veri üzerinden öğrenmesini sağlayan bir yapay zeka alt dalıdır.</p>
 <h2>Makine öğrenmesi nedir?</h2>
 <p>Makine öğrenmesi, veriyi analiz ederek örüntüleri öğrenen ve bu bilgiyi kullanarak tahmin yapan sistemlerdir. Günümüzde spam filtreleri, öneri algoritmaları ve finansal analiz sistemleri gibi birçok alanda aktif olarak kullanılır.</p>
@@ -562,14 +665,78 @@
 </ul>
 <p>Bu içerikler birlikte okunduğunda konu tam oturur.</p>
 
+              </div>
 
-    </article>
+              <nav class="internal-links" aria-label="İlgili bağlantılar"><ul><li class="internal-link"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/">Yapay Zeka Nedir?</a></li></ul></nav>
 
-    <section class="related-posts" aria-labelledby="related-posts-title"><h2 id="related-posts-title">İlgili Yazılar</h2><ul><li class="related-post"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/"><h3>Yapay Zeka Nedir?</h3><p>Yapay zeka nedir ve nasıl çalışır</p></a></li></ul></section>
+              <section class="related-posts" aria-labelledby="related-posts-title"><h2 id="related-posts-title">İlgili Yazılar</h2><ul><li class="related-post"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/"><h3>Yapay Zeka Nedir?</h3><p>Yapay zeka nedir ve nasıl çalışır</p></a></li></ul></section>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </main>
 
-  <nav class="internal-links" aria-label="İlgili bağlantılar"><ul><li class="internal-link"><a href="/teknoloji/yapay-zeka/yapay-zeka-nedir/">Yapay Zeka Nedir?</a></li></ul></nav>
+  <footer class="site-footer">
+
+    <div class="site-footer__inner">
+
+      <div class="site-footer__grid">
+
+        <section class="site-footer__section">
+
+          <h2 class="site-footer__title">
+            Bilgirasyon
+          </h2>
+
+          <p class="site-footer__text">
+            Teknolojiyi anlayın, geleceği keşfedin.
+          </p>
+
+        </section>
+
+        <section class="site-footer__section">
+
+          <h2 class="site-footer__title">
+            Kategoriler
+          </h2>
+
+          <nav aria-label="Footer kategorileri">
+
+            <ul class="link-list">
+
+              <li>
+                <a href="/teknoloji/">
+                  Teknoloji
+                </a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+        </section>
+
+      </div>
+
+      <div class="site-footer__bottom">
+
+        <p class="site-footer__copyright">
+          © Bilgirasyon. Tüm hakları saklıdır.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
+
 </html>
