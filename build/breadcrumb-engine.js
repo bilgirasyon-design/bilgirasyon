@@ -14,14 +14,92 @@ function normalizeSegment(value) {
 }
 
 function normalizeDomain(domain) {
-  return String(domain ?? "").trim().replace(/\/+$/, "");
+  return String(domain ?? "")
+    .trim()
+    .replace(/\/+$/, "");
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function hasRoute(availableRoutes, route) {
+  return availableRoutes instanceof Set && availableRoutes.has(route);
+}
+
+function createBreadcrumbEntries({
+  metadata,
+  route,
+  domain,
+  siteName,
+  availableRoutes
+}) {
+  const baseUrl = normalizeDomain(domain);
+  const categoryName = String(metadata.category ?? "").trim();
+  const categorySlug = normalizeSegment(categoryName);
+  const categoryRoute = `/${categorySlug}/`;
+
+  const items = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: siteName,
+      item: `${baseUrl}/`
+    }
+  ];
+
+  if (categoryName) {
+    const item = {
+      "@type": "ListItem",
+      position: items.length + 1,
+      name: categoryName
+    };
+
+    if (hasRoute(availableRoutes, categoryRoute)) {
+      item.item = `${baseUrl}${categoryRoute}`;
+    }
+
+    items.push(item);
+  }
+
+  if (metadata.subcategory) {
+    const subcategoryName = String(metadata.subcategory).trim();
+    const subcategorySlug = normalizeSegment(subcategoryName);
+    const subcategoryRoute = `/${categorySlug}/${subcategorySlug}/`;
+    const item = {
+      "@type": "ListItem",
+      position: items.length + 1,
+      name: subcategoryName
+    };
+
+    if (hasRoute(availableRoutes, subcategoryRoute)) {
+      item.item = `${baseUrl}${subcategoryRoute}`;
+    }
+
+    items.push(item);
+  }
+
+  items.push({
+    "@type": "ListItem",
+    position: items.length + 1,
+    name: String(metadata.title).trim(),
+    item: route
+  });
+
+  return items;
 }
 
 export function generateBreadcrumbSchema({
   metadata,
   route,
   domain,
-  siteName = "Bilgirasyon"
+  siteName = "Bilgirasyon",
+  availableRoutes = new Set()
 }) {
   if (!metadata || typeof metadata !== "object") {
     throw new Error("Breadcrumb Engine: metadata gerekli.");
@@ -35,52 +113,17 @@ export function generateBreadcrumbSchema({
     throw new Error("Breadcrumb Engine: domain gerekli.");
   }
 
-  const baseUrl = normalizeDomain(domain);
-  const categoryName = String(metadata.category ?? "").trim();
-  const categorySlug = normalizeSegment(categoryName);
-
-  const items = [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: siteName,
-      item: `${baseUrl}/`
-    }
-  ];
-
-  if (categoryName) {
-    items.push({
-      "@type": "ListItem",
-      position: items.length + 1,
-      name: categoryName,
-      item: `${baseUrl}/${categorySlug}/`
-    });
-  }
-
-  if (metadata.subcategory) {
-    const subcategoryName = String(metadata.subcategory).trim();
-    const subcategorySlug = normalizeSegment(subcategoryName);
-
-    items.push({
-      "@type": "ListItem",
-      position: items.length + 1,
-      name: subcategoryName,
-      item: `${baseUrl}/${categorySlug}/${subcategorySlug}/`
-    });
-  }
-
-  items.push({
-    "@type": "ListItem",
-    position: items.length + 1,
-    name: String(metadata.title).trim(),
-    item: route
-  });
-
   return JSON.stringify(
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      itemListElement: items
+      itemListElement: createBreadcrumbEntries({
+        metadata,
+        route,
+        domain,
+        siteName,
+        availableRoutes
+      })
     },
     null,
     2
@@ -90,29 +133,39 @@ export function generateBreadcrumbSchema({
 export function renderBreadcrumbHtml({
   metadata,
   route,
-  siteName = "Bilgirasyon"
+  siteName = "Bilgirasyon",
+  availableRoutes = new Set()
 }) {
   const categoryName = String(metadata.category ?? "").trim();
   const categorySlug = normalizeSegment(categoryName);
+  const categoryRoute = `/${categorySlug}/`;
   const items = [
-    `<li><a href="/">${siteName}</a></li>`
+    `<li><a href="/">${escapeHtml(siteName)}</a></li>`
   ];
 
   if (categoryName) {
     items.push(
-      `<li><a href="/${categorySlug}/">${categoryName}</a></li>`
+      hasRoute(availableRoutes, categoryRoute)
+        ? `<li><a href="${categoryRoute}">${escapeHtml(categoryName)}</a></li>`
+        : `<li>${escapeHtml(categoryName)}</li>`
     );
   }
 
   if (metadata.subcategory) {
     const subcategoryName = String(metadata.subcategory).trim();
     const subcategorySlug = normalizeSegment(subcategoryName);
+    const subcategoryRoute = `/${categorySlug}/${subcategorySlug}/`;
+
     items.push(
-      `<li><a href="/${categorySlug}/${subcategorySlug}/">${subcategoryName}</a></li>`
+      hasRoute(availableRoutes, subcategoryRoute)
+        ? `<li><a href="${subcategoryRoute}">${escapeHtml(subcategoryName)}</a></li>`
+        : `<li>${escapeHtml(subcategoryName)}</li>`
     );
   }
 
-  items.push(`<li aria-current="page">${String(metadata.title).trim()}</li>`);
+  items.push(
+    `<li aria-current="page">${escapeHtml(metadata.title)}</li>`
+  );
 
   return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${items.join("")}</ol></nav>`;
 }
